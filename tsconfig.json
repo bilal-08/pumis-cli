@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {            
+      "target": "ES6",                                
+      "module": "NodeNext",       
+      "moduleResolution": "NodeNext",                    
+      "lib": [
+        "DOM",
+        "ESNext",
+        "ESNext.Array",
+        "ESNext.AsyncIterable"
+      ],                                   
+      "outDir": "./dist",      
+      "allowSyntheticDefaultImports": true,              
+      "strict": true,                                
+      "esModuleInterop": true,                        
+      "skipLibCheck": true,                          
+      "forceConsistentCasingInFileNames": true,
+      "experimentalDecorators": true,
+      "emitDecoratorMetadata": true,
+      "strictFunctionTypes": true,
+    },
+    "include": [
+      "src/**/*"
+    ]
+}
