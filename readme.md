@@ -13,7 +13,7 @@ Make sure you have nodejs installed.
 
 run:
 ```bash
-npx pumis-cli
+npm i -g pumis-cli
  ```
 
 ## Usage 🔎
