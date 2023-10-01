@@ -5,7 +5,6 @@ A CLI tool for getting your attendance right from your Terminal.
 > Saves time of going through tedious steps to see your attendance
 
 ⚠ Note : This Repository is only for education purpose-only. Don't use any method which may harm the site
->
 
 
 ## Installation 🤖
