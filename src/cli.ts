@@ -26,8 +26,8 @@ command.action(async (username, password, option) => {
     let cookie: string
     const user = await db.getUser(username)
     const isValid = (user[0]?.user.timestamp || 0 + 3600000) > Date.now()
-    if (user[0] && !isValid) {
-        cookie = user[0]?.user.cookie
+    if (!isValid) {
+        cookie = user[0]?.user.cookie || ''
     } else {
         cookie = await login(username, password, spinner)
         db.saveUser(username, cookie, isValid)

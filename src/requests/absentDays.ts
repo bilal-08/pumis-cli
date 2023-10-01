@@ -2,12 +2,13 @@ import axios from 'axios'
 import getheaders from '../utils/getheaders.js'
 import * as cheerio from 'cheerio'
 import chalk from 'chalk'
-
+import crypto from 'crypto'
+import https from 'https'
 const getAbsent = async (cookie: string) => {
     const headers = getheaders(cookie)
     const res = await axios.get(
         'https://ums.paruluniversity.ac.in/StudentPanel/TTM_Attendance/TTM_Attendance_StudentAbsentDays.aspx',
-        { headers }
+        { headers,httpsAgent:new https.Agent({secureOptions:crypto.constants.SSL_OP_LEGACY_SERVER_CONNECT }) }
     )
     let $ = cheerio.load(res.data)
     let heading: string[] = []

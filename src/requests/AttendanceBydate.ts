@@ -1,13 +1,14 @@
 import axios from 'axios'
 import getheaders from '../utils/getheaders.js'
 import * as cheerio from 'cheerio'
-
+import crypto from 'crypto'
+import https from 'https'
 const getAttendanceByDate = async (cookie: string, date: string) => {
     const headers = getheaders(cookie)
     const MonthDate = await axios
         .get(
             `https://ums.paruluniversity.ac.in/AdminPanel/TimeTable/TTM_Attendance/TTM_AttendanceViewStudentAttendanceDetailByDate.aspx?AttendanceDate=${date}`,
-            { headers }
+            { headers,httpsAgent:new https.Agent({secureOptions:crypto.constants.SSL_OP_LEGACY_SERVER_CONNECT }) }
         )
         .catch((x) => x)
     let heading: string[] = []
