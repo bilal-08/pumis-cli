@@ -6,6 +6,9 @@ A CLI tool for getting your attendance right from your Terminal.
 
 ⚠ Note : This Repository is only for education purpose-only. Don't use any method which may harm the site
 
+#### Preview
+
+<img src="https://i.ibb.co/TMpK73G/Screenshot-2023-12-23-224112.jpg" alt="Screenshot-2023-12-23-224112" border="0">
 
 ## Installation 🤖
 Make sure you have nodejs installed.
