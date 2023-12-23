@@ -24,14 +24,7 @@ const command = program
 command.action(async (username, password, option) => {
     const spinner = createSpinner('Login into you').start()
     let cookie: string
-    const user = await db.getUser(username)
-    const isValid = (user[0]?.user.timestamp || 0 + 3600000) > Date.now()
-    if (!isValid) {
-        cookie = user[0]?.user.cookie || ''
-    } else {
-        cookie = await login(username, password, spinner)
-        db.saveUser(username, cookie, isValid)
-    }
+    cookie = await login(username, password, spinner)
     if (cookie) {
         spinner.success({ text: chalk.green('Sucessfully Logged in') })
     }
